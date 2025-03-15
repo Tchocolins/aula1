@@ -1,5 +1,6 @@
 x = -1
-
+type(x) == int
+int == int
 y = 2
 
 w = x + y
@@ -20,7 +21,8 @@ if x > 0:
     print("x é positivo")
     print()
     print()
-
+elif x < -40:
+    print()
 else:
     print("x é negativo")
 
@@ -55,6 +57,8 @@ print(minha_lista)
 for n in minha_lista:
     print(n)
 
+print(n)
+
 d = {
     'a': 1, 
     'b': "exemplo", 
@@ -85,7 +89,8 @@ print(list(range(10)))
 
 def divisores(n):
     resposta = []
-    for e in range(n):
+    inteiros = list(range(n))
+    for e in inteiros:
         e1 = e + 1
         if n % e1 == 0:
             resposta.append(e1)
@@ -101,3 +106,39 @@ print_divisores(48)
 # implementar função que verifica se um número é primo ou não
 # exemplo:
 # is_prime(47) ----> False
+
+def outro_divisor(n):
+    resposta = []
+    for k in range(n):
+         # não é possível essa conversão?
+        if n % (k+1) == 0:
+            resposta.append(k+1)
+    return resposta
+
+print (outro_divisor(20))
+lista_inteiros = tuple()
+print (lista_inteiros)
+# print (type(e1))
+
+
+
+def validador_de_primos (j):
+    divisores_de_jota = divisores(j)
+    if len (divisores_de_jota) == 2:
+        print (str(j) + " é primo.")
+    else:
+        print (str(j) + " não é primo.")
+
+# validador_de_primos (124537697)
+
+# lista_prima = (n,1)
+
+#     if divisores(n) = lista_prima
+#     else bool(n) = "v"
+#     if divisores (n) != lista_prima
+#     else bool(n) = ("")
+
+# def print_números_primos(n):
+#     print (n "é primo? ----->" str(bool(n)))
+
+# print_números_primos(7)
