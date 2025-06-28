@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Botão com JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #f00a4f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exemplo de Botão com JavaScript</h1>
+    <button id="meuBotao">Clique Aqui</button>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        // Seleciona o botão pelo ID
+        const botao = document.getElementById("meuBotao");
+
+        const action = function() {
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            ctx.moveTo(0,0);
+            ctx.lineTo(60,70);
+            ctx.arc(95, 50, 40, 0, 1 * Math.PI);
+            ctx.stroke();
+            alert("Botão clicado! 🎉");
+        };
+
+        // Adiciona um evento de clique ao botão
+        botao.addEventListener("click", action);
+    </script>
+</body>
+</html>

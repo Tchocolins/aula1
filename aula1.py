@@ -1,3 +1,9 @@
+
+import time
+
+
+
+
 x = -1
 type(x) == int
 int == int
@@ -82,26 +88,29 @@ m = [
 print(m[0][2])
 
 m[0][2] = 300
+print (type (m))
 
 print(m)
 
 print(list(range(10)))
 
-def divisores(n):
+def divisores(n:int):
     resposta = []
     inteiros = list(range(n))
     for e in inteiros:
         e1 = e + 1
         if n % e1 == 0:
             resposta.append(e1)
+           
     return resposta
+ 
 
-print(divisores(20))
+# print(divisores(20))
 
 def print_divisores(n):
     print("Os divisores de " + str(n) + " são:\n" + str(divisores(n)))
 
-print_divisores(48)
+# print_divisores(48)
 
 # implementar função que verifica se um número é primo ou não
 # exemplo:
@@ -110,35 +119,49 @@ print_divisores(48)
 def outro_divisor(n):
     resposta = []
     for k in range(n):
-         # não é possível essa conversão?
+        
         if n % (k+1) == 0:
             resposta.append(k+1)
     return resposta
 
-print (outro_divisor(20))
-lista_inteiros = tuple()
-print (lista_inteiros)
+
+
+
+# print (outro_divisor(20))
+# lista_inteiros = tuple()
+# print (lista_inteiros)
 # print (type(e1))
 
 
 
 def validador_de_primos (j):
+    lista_prima = [1,j]
     divisores_de_jota = divisores(j)
-    if len (divisores_de_jota) == 2:
+    if lista_prima == divisores (j):
         print (str(j) + " é primo.")
     else:
         print (str(j) + " não é primo.")
 
-# validador_de_primos (124537697)
+
+# print(validador_de_primos(12))
+from typing import Callable
+
+def print_funcion_delay(f:Callable, arg:int):
+    inicio = time.time()
+    print ("inicio: " + str(inicio))
+    f (arg)
+    fim = time.time()
+    print ("fim: " + str(fim))
+    print("delay: " + str(fim - inicio) + " segundos")
+
+# print_funcion_delay(validador_de_primos, 84537697)
 
 # lista_prima = (n,1)
 
 #     if divisores(n) = lista_prima
 #     else bool(n) = "v"
 #     if divisores (n) != lista_prima
-#     else bool(n) = ("")
-
-# def print_números_primos(n):
+#números_primos(n):
 #     print (n "é primo? ----->" str(bool(n)))
 
 # print_números_primos(7)

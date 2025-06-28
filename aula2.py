@@ -33,3 +33,31 @@ n = int(input("listar divisores de: "))
 divs = aula1.divisores(n)
 
 print("divisores: " + str(divs))
+
+def validador_aprimorado(n):
+    resultado = []
+    inteiros = list(range(n))
+    for e in inteiros:
+        e1 = e + 1
+        if n % e1 == 0:
+            resultado.append(e1)
+        if e1*e1 == n:
+            print (str(n) + " não é primo.")
+            return
+        if e1*e1 > n:
+            break
+    if len (resultado) == 1:
+        print (str(n) + " é primo.")
+    else:
+        print (str(n) + " não é primo.")
+    
+print (validador_aprimorado(20))
+    
+aula1.print_funcion_delay(validador_aprimorado, 84537697)
+
+##
+
+for i in range (8):
+    print (i)
+     
+    

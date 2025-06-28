@@ -1,0 +1,11 @@
+{
+    "name": "padaria do Zé",
+    "isME": false,
+    "faturamento": 20000.00,
+    "employees":[
+      {"firstName":"John", "lastName":"Doe"},
+      {"firstName":"Anna", "lastName":"Smith"},
+      {"firstName":"Peter", "lastName":"Jones"}
+    ],
+    "partners": null
+}

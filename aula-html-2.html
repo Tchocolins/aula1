@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Canvas</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>    <h1>Exemplo de Botão com JavaScript</h1>
+    <canvas id="myCanvas" width="400" height="300" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+
+    let x = 0;
+    let v_x = 0.2;
+    
+    let g = 0.01;
+    let v_y = -0.2;
+    let w = 400;
+    let h = 300;
+    let y = 150;
+
+
+    class CircleDrawer {
+        constructor(canvasId) {
+            this.canvas = document.getElementById(canvasId);
+            this.ctx = this.canvas.getContext('2d');
+        }
+
+        getCtx() {
+            return this.ctx;
+        }
+
+        getCanvas() {
+            return this.canvas;
+        }
+        
+        draw(color, radius, x, y) {
+            console.log(x, y);
+            this.ctx.beginPath();
+            this.ctx.arc(
+                x, 
+                y, 
+                radius, 
+                0, 
+                Math.PI*2
+            );
+            this.ctx.fillStyle = color;
+            this.ctx.fill();
+        }
+    }
+
+    const moveCircle = function() {
+        const drawer = new CircleDrawer('myCanvas');
+        const ctx = drawer.getCtx();
+        const canvas = drawer.getCanvas();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawer.draw('red', 5, x, y);
+        x += v_x;
+        y += v_y;
+        v_y += g;
+        if (y >= h || y <= 0 ) {
+            v_y *= -1 
+        }
+        if (x >= w || x <= 0) {
+            v_x *= -1;
+        }
+    }
+    
+    // Uso:
+    document.addEventListener('DOMContentLoaded', () => {   
+        setInterval(moveCircle, 1)
+    });
+
+      
+
+    </script>
+</body>
+</html>

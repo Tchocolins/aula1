@@ -1,0 +1,22 @@
+[
+{
+    "type": "Paralelogram",
+    "b": 20,
+    "h": 10,
+    "a": 30
+},
+
+{
+    "type": "Square",
+    "a": 15
+    
+},
+
+{
+    "type": "Triangle",
+    "a": 3,
+    "b": 4,
+    "c": 5,
+    "ha": 3   
+}
+]
